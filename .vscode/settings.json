@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bc0dc130-6652-4e35-92b7-5e83ca87d1da/resourceGroups/GR-TMP-J/providers/Microsoft.Web/sites/tmp-jho",
+    "appService.deploySubpath": "."
+}

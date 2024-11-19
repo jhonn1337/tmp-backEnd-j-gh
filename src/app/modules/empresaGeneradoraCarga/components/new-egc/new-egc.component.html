@@ -1,0 +1,82 @@
+<h2 mat-dialog-title> {{ estadoFormulario }} Empresa Remitente de la carga </h2>
+<mat-dialog-content>
+
+    <form [formGroup]="egcForm">
+        <div class="category-container">
+
+            <mat-form-field>
+                <mat-label>Nit</mat-label>
+                <input matInput placeholder="nit" formControlName="nit" type="number" required/>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="nombre" formControlName="nombre" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Dirección</mat-label>
+                <input matInput placeholder="direccion" formControlName="direccion" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Telefono</mat-label>
+                <input matInput placeholder="telefono" formControlName="telefono" type="number" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Correo Electronico</mat-label>
+                <input matInput placeholder="correoElectronico" formControlName="correoElectronico" required
+                       email>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Nombre Contacto</mat-label>
+                <input matInput placeholder="nombreContacto" formControlName="nombreContacto" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Observacion Contacto</mat-label>
+                <textarea matInput placeholder="observacionContacto" formControlName="observacionContacto" required></textarea>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Descripcion</mat-label>
+                <textarea matInput placeholder="descripcion" formControlName="descripcion" required></textarea>
+            </mat-form-field> 
+            
+            <mat-form-field>
+                <mat-label>Departamento</mat-label>
+                <mat-select formControlName="departamentoSedePrincipal">
+                    <mat-option *ngFor="let depa of departamentoSedePrincipal" [value]="depa.id">
+                        {{ depa.nombre }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Municipio</mat-label>
+                <mat-select formControlName="municipio">
+                    <mat-option *ngFor="let muni of municipio" [value]="muni.id">
+                        {{ muni.nombre }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+    <button mat-button color="primary" (click)="onSave()" [disabled]="egcForm.invalid">
+        <mat-icon>save</mat-icon> Guardar
+    </button>
+
+    <button mat-button color="primary" (click)="onCancel()">
+        <mat-icon>cancel</mat-icon> Cancelar
+    </button>
+
+</mat-dialog-actions>
+
